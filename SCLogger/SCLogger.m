@@ -90,8 +90,8 @@
     
     UITapGestureRecognizer* tapReconEmail = [[UITapGestureRecognizer alloc]
                                              initWithTarget:self action:@selector(sendMail)];
-    tapReconEmail.numberOfTapsRequired = 2;
-    tapReconEmail.numberOfTouchesRequired = 2;
+    tapReconEmail.numberOfTapsRequired = 1;
+    tapReconEmail.numberOfTouchesRequired = 3;
     [self.logText addGestureRecognizer:tapReconEmail];
 }
 
