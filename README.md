@@ -4,6 +4,8 @@ SCLogger
 SCLogger is a debugging console created by developer for developers, easy integration with your project.
 
 
+![SCLogger Demo](http://www.lucascorrea.com/Git/SCLoggerDemo.gif)
+
 
 Getting Started
 =================
@@ -13,11 +15,16 @@ Added the import in your project file YourProject-Prefix.pch
 
 	#import "SCLogger.h"
 
-or
+**or**
 
 Using [CocoaPods](http://cocoapods.org) to get start, you can add following line to your Podfile:
 
 	pod 'SCLogger'
+	
+	
+Added the import in your project file YourProject-Prefix.pch 
+
+	#import <SCLogger/SCLogger.h>
 
 Example Usage
 =============
@@ -29,8 +36,8 @@ To use the component is very easy, if your project has already added the import 
 For all **NSLog** used in the project will be recorded in SCLogger also is recorded in a log file. 
 In the debug screen it is possible to send the log via email with the gesture. 
 
-	tapReconEmail.numberOfTapsRequired = 2; 
-	tapReconEmail.numberOfTouchesRequired = 2;
+	tapReconEmail.numberOfTapsRequired = 1; 
+	tapReconEmail.numberOfTouchesRequired = 3;
 
 
 License
