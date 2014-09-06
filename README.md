@@ -11,7 +11,7 @@ Just drag the two classes into your project. Also you need to import MessageUI f
 
 Added the import in your project file YourProject-Prefix.pch 
 
-#import "SCLogger.h"
+	#import "SCLogger.h"
 
 or
 
