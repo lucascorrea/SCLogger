@@ -39,7 +39,7 @@
         
         NSString *name = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
         
-        sharedInstance.filename = [NSString stringWithFormat:@"%@.txt", name];
+        sharedInstance.filename = [NSString stringWithFormat:@"%@.log", name];
         NSString *filePath = [documentsDirectory stringByAppendingFormat:@"/%@", sharedInstance.filename];
         
         if ([[NSFileManager defaultManager] fileExistsAtPath:filePath] == NO){
