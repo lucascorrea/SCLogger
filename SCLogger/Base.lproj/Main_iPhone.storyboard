@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Logger View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="SCLoggerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofa-Yn-Pf6">
+                                <rect key="frame" x="20" y="416" width="280" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="EC6-3O-67Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="18"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Generate Logger">
+                                    <color key="titleColor" red="1" green="0.62840224860000005" blue="0.072004058750000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="Stop"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="generateButtonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZEP-TK-f5o"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=">>> SCLogger &lt;&lt;&lt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNj-Yv-RrZ">
+                                <rect key="frame" x="20" y="20" width="280" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="28"/>
+                                <color key="textColor" red="1" green="0.62840224860000005" blue="0.072004058750000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="igW-Z6-r4a" appends="YES" id="Zc7-Za-PLw"/>
+                                </connections>
+                            </label>
+                            <textView alpha="0.44999999999999962" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U53-dt-0bL">
+                                <rect key="frame" x="20" y="73" width="280" height="327"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.19" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="9xn-i1-eAm"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1469907407407407" green="0.1469907407407407" blue="0.1469907407407407" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="U53-dt-0bL" firstAttribute="top" secondItem="UNj-Yv-RrZ" secondAttribute="bottom" constant="3" id="26G-V5-cTU"/>
+                            <constraint firstItem="UNj-Yv-RrZ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" symbolic="YES" id="5EZ-Ac-9jl"/>
+                            <constraint firstAttribute="trailing" secondItem="ofa-Yn-Pf6" secondAttribute="trailing" constant="20" symbolic="YES" id="Fqu-hm-pGn"/>
+                            <constraint firstItem="ofa-Yn-Pf6" firstAttribute="trailing" secondItem="U53-dt-0bL" secondAttribute="trailing" id="RD7-W1-jig"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ofa-Yn-Pf6" secondAttribute="bottom" constant="20" id="RoG-ua-lR2"/>
+                            <constraint firstItem="U53-dt-0bL" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="53" id="Yow-Nu-ZXA"/>
+                            <constraint firstItem="ofa-Yn-Pf6" firstAttribute="leading" secondItem="UNj-Yv-RrZ" secondAttribute="leading" id="fOO-3H-Nbp"/>
+                            <constraint firstItem="ofa-Yn-Pf6" firstAttribute="leading" secondItem="U53-dt-0bL" secondAttribute="leading" id="k6h-Bw-0ty"/>
+                            <constraint firstItem="ofa-Yn-Pf6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="p3M-fb-GT7"/>
+                            <constraint firstItem="ofa-Yn-Pf6" firstAttribute="top" secondItem="U53-dt-0bL" secondAttribute="bottom" constant="16" id="qMJ-0T-ISD"/>
+                            <constraint firstItem="ofa-Yn-Pf6" firstAttribute="trailing" secondItem="UNj-Yv-RrZ" secondAttribute="trailing" id="xFa-hU-NYj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logTextView" destination="U53-dt-0bL" id="dEN-rc-ksZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="igW-Z6-r4a">
+                    <connections>
+                        <action selector="tapGesture:" destination="vXZ-lx-hvc" id="ZeY-C8-9NZ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

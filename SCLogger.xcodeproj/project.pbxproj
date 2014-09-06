@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A073D54319BA30F800773C6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A073D54219BA30F800773C6B /* Foundation.framework */; };
+		A073D54519BA30F800773C6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A073D54419BA30F800773C6B /* CoreGraphics.framework */; };
+		A073D54719BA30F800773C6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A073D54619BA30F800773C6B /* UIKit.framework */; };
+		A073D54D19BA30F800773C6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A073D54B19BA30F800773C6B /* InfoPlist.strings */; };
+		A073D54F19BA30F800773C6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A073D54E19BA30F800773C6B /* main.m */; };
+		A073D55319BA30F800773C6B /* SCLoggerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A073D55219BA30F800773C6B /* SCLoggerAppDelegate.m */; };
+		A073D55619BA30F800773C6B /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A073D55419BA30F800773C6B /* Main_iPhone.storyboard */; };
+		A073D55919BA30F800773C6B /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A073D55719BA30F800773C6B /* Main_iPad.storyboard */; };
+		A073D55C19BA30F800773C6B /* SCLoggerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A073D55B19BA30F800773C6B /* SCLoggerViewController.m */; };
+		A073D55E19BA30F800773C6B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A073D55D19BA30F800773C6B /* Images.xcassets */; };
+		A073D56519BA30F900773C6B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A073D56419BA30F900773C6B /* XCTest.framework */; };
+		A073D56619BA30F900773C6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A073D54219BA30F800773C6B /* Foundation.framework */; };
+		A073D56719BA30F900773C6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A073D54619BA30F800773C6B /* UIKit.framework */; };
+		A073D56F19BA30F900773C6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A073D56D19BA30F900773C6B /* InfoPlist.strings */; };
+		A073D57119BA30F900773C6B /* SCLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A073D57019BA30F900773C6B /* SCLoggerTests.m */; };
+		A073D57C19BA31F200773C6B /* SCLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A073D57B19BA31F200773C6B /* SCLogger.m */; };
+		A073D58019BA3F5000773C6B /* LoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = A073D57F19BA3F5000773C6B /* LoremIpsum.m */; };
+		A073D58519BAAB1100773C6B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A073D58419BAAB1100773C6B /* MessageUI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A073D56819BA30F900773C6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A073D53719BA30F800773C6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A073D53E19BA30F800773C6B;
+			remoteInfo = SCLogger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A073D53F19BA30F800773C6B /* SCLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A073D54219BA30F800773C6B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A073D54419BA30F800773C6B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A073D54619BA30F800773C6B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A073D54A19BA30F800773C6B /* SCLogger-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SCLogger-Info.plist"; sourceTree = "<group>"; };
+		A073D54C19BA30F800773C6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A073D54E19BA30F800773C6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A073D55019BA30F800773C6B /* SCLogger-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCLogger-Prefix.pch"; sourceTree = "<group>"; };
+		A073D55119BA30F800773C6B /* SCLoggerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCLoggerAppDelegate.h; sourceTree = "<group>"; };
+		A073D55219BA30F800773C6B /* SCLoggerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCLoggerAppDelegate.m; sourceTree = "<group>"; };
+		A073D55519BA30F800773C6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		A073D55819BA30F800773C6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		A073D55A19BA30F800773C6B /* SCLoggerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCLoggerViewController.h; sourceTree = "<group>"; };
+		A073D55B19BA30F800773C6B /* SCLoggerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCLoggerViewController.m; sourceTree = "<group>"; };
+		A073D55D19BA30F800773C6B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A073D56319BA30F900773C6B /* SCLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A073D56419BA30F900773C6B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A073D56C19BA30F900773C6B /* SCLoggerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SCLoggerTests-Info.plist"; sourceTree = "<group>"; };
+		A073D56E19BA30F900773C6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A073D57019BA30F900773C6B /* SCLoggerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCLoggerTests.m; sourceTree = "<group>"; };
+		A073D57A19BA31F200773C6B /* SCLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLogger.h; sourceTree = "<group>"; };
+		A073D57B19BA31F200773C6B /* SCLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLogger.m; sourceTree = "<group>"; };
+		A073D57E19BA3F5000773C6B /* LoremIpsum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoremIpsum.h; sourceTree = "<group>"; };
+		A073D57F19BA3F5000773C6B /* LoremIpsum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoremIpsum.m; sourceTree = "<group>"; };
+		A073D58419BAAB1100773C6B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A073D53C19BA30F800773C6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A073D58519BAAB1100773C6B /* MessageUI.framework in Frameworks */,
+				A073D54519BA30F800773C6B /* CoreGraphics.framework in Frameworks */,
+				A073D54719BA30F800773C6B /* UIKit.framework in Frameworks */,
+				A073D54319BA30F800773C6B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A073D56019BA30F900773C6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A073D56519BA30F900773C6B /* XCTest.framework in Frameworks */,
+				A073D56719BA30F900773C6B /* UIKit.framework in Frameworks */,
+				A073D56619BA30F900773C6B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A073D53619BA30F800773C6B = {
+			isa = PBXGroup;
+			children = (
+				A073D54819BA30F800773C6B /* SCLogger */,
+				A073D56A19BA30F900773C6B /* SCLoggerTests */,
+				A073D54119BA30F800773C6B /* Frameworks */,
+				A073D54019BA30F800773C6B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A073D54019BA30F800773C6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A073D53F19BA30F800773C6B /* SCLogger.app */,
+				A073D56319BA30F900773C6B /* SCLoggerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A073D54119BA30F800773C6B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A073D58419BAAB1100773C6B /* MessageUI.framework */,
+				A073D54219BA30F800773C6B /* Foundation.framework */,
+				A073D54419BA30F800773C6B /* CoreGraphics.framework */,
+				A073D54619BA30F800773C6B /* UIKit.framework */,
+				A073D56419BA30F900773C6B /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A073D54819BA30F800773C6B /* SCLogger */ = {
+			isa = PBXGroup;
+			children = (
+				A073D57D19BA31FA00773C6B /* Logger */,
+				A073D58119BA3F5700773C6B /* LoremIpsum */,
+				A073D55119BA30F800773C6B /* SCLoggerAppDelegate.h */,
+				A073D55219BA30F800773C6B /* SCLoggerAppDelegate.m */,
+				A073D55419BA30F800773C6B /* Main_iPhone.storyboard */,
+				A073D55719BA30F800773C6B /* Main_iPad.storyboard */,
+				A073D55A19BA30F800773C6B /* SCLoggerViewController.h */,
+				A073D55B19BA30F800773C6B /* SCLoggerViewController.m */,
+				A073D55D19BA30F800773C6B /* Images.xcassets */,
+				A073D54919BA30F800773C6B /* Supporting Files */,
+			);
+			path = SCLogger;
+			sourceTree = "<group>";
+		};
+		A073D54919BA30F800773C6B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A073D54A19BA30F800773C6B /* SCLogger-Info.plist */,
+				A073D54B19BA30F800773C6B /* InfoPlist.strings */,
+				A073D54E19BA30F800773C6B /* main.m */,
+				A073D55019BA30F800773C6B /* SCLogger-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A073D56A19BA30F900773C6B /* SCLoggerTests */ = {
+			isa = PBXGroup;
+			children = (
+				A073D57019BA30F900773C6B /* SCLoggerTests.m */,
+				A073D56B19BA30F900773C6B /* Supporting Files */,
+			);
+			path = SCLoggerTests;
+			sourceTree = "<group>";
+		};
+		A073D56B19BA30F900773C6B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A073D56C19BA30F900773C6B /* SCLoggerTests-Info.plist */,
+				A073D56D19BA30F900773C6B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A073D57D19BA31FA00773C6B /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				A073D57A19BA31F200773C6B /* SCLogger.h */,
+				A073D57B19BA31F200773C6B /* SCLogger.m */,
+			);
+			name = Logger;
+			sourceTree = "<group>";
+		};
+		A073D58119BA3F5700773C6B /* LoremIpsum */ = {
+			isa = PBXGroup;
+			children = (
+				A073D57E19BA3F5000773C6B /* LoremIpsum.h */,
+				A073D57F19BA3F5000773C6B /* LoremIpsum.m */,
+			);
+			name = LoremIpsum;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A073D53E19BA30F800773C6B /* SCLogger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A073D57419BA30F900773C6B /* Build configuration list for PBXNativeTarget "SCLogger" */;
+			buildPhases = (
+				A073D53B19BA30F800773C6B /* Sources */,
+				A073D53C19BA30F800773C6B /* Frameworks */,
+				A073D53D19BA30F800773C6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SCLogger;
+			productName = SCLogger;
+			productReference = A073D53F19BA30F800773C6B /* SCLogger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A073D56219BA30F900773C6B /* SCLoggerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A073D57719BA30F900773C6B /* Build configuration list for PBXNativeTarget "SCLoggerTests" */;
+			buildPhases = (
+				A073D55F19BA30F900773C6B /* Sources */,
+				A073D56019BA30F900773C6B /* Frameworks */,
+				A073D56119BA30F900773C6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A073D56919BA30F900773C6B /* PBXTargetDependency */,
+			);
+			name = SCLoggerTests;
+			productName = SCLoggerTests;
+			productReference = A073D56319BA30F900773C6B /* SCLoggerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A073D53719BA30F800773C6B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SCLogger;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Siriuscode Solutions";
+				TargetAttributes = {
+					A073D56219BA30F900773C6B = {
+						TestTargetID = A073D53E19BA30F800773C6B;
+					};
+				};
+			};
+			buildConfigurationList = A073D53A19BA30F800773C6B /* Build configuration list for PBXProject "SCLogger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A073D53619BA30F800773C6B;
+			productRefGroup = A073D54019BA30F800773C6B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A073D53E19BA30F800773C6B /* SCLogger */,
+				A073D56219BA30F900773C6B /* SCLoggerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A073D53D19BA30F800773C6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A073D55919BA30F800773C6B /* Main_iPad.storyboard in Resources */,
+				A073D55E19BA30F800773C6B /* Images.xcassets in Resources */,
+				A073D55619BA30F800773C6B /* Main_iPhone.storyboard in Resources */,
+				A073D54D19BA30F800773C6B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A073D56119BA30F900773C6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A073D56F19BA30F900773C6B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A073D53B19BA30F800773C6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A073D57C19BA31F200773C6B /* SCLogger.m in Sources */,
+				A073D58019BA3F5000773C6B /* LoremIpsum.m in Sources */,
+				A073D55319BA30F800773C6B /* SCLoggerAppDelegate.m in Sources */,
+				A073D55C19BA30F800773C6B /* SCLoggerViewController.m in Sources */,
+				A073D54F19BA30F800773C6B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A073D55F19BA30F900773C6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A073D57119BA30F900773C6B /* SCLoggerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A073D56919BA30F900773C6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A073D53E19BA30F800773C6B /* SCLogger */;
+			targetProxy = A073D56819BA30F900773C6B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A073D54B19BA30F800773C6B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A073D54C19BA30F800773C6B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A073D55419BA30F800773C6B /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A073D55519BA30F800773C6B /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		A073D55719BA30F800773C6B /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A073D55819BA30F800773C6B /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		A073D56D19BA30F900773C6B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A073D56E19BA30F900773C6B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A073D57219BA30F900773C6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A073D57319BA30F900773C6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A073D57519BA30F900773C6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCLogger/SCLogger-Prefix.pch";
+				INFOPLIST_FILE = "SCLogger/SCLogger-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A073D57619BA30F900773C6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCLogger/SCLogger-Prefix.pch";
+				INFOPLIST_FILE = "SCLogger/SCLogger-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A073D57819BA30F900773C6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SCLogger.app/SCLogger";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCLogger/SCLogger-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SCLoggerTests/SCLoggerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A073D57919BA30F900773C6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SCLogger.app/SCLogger";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCLogger/SCLogger-Prefix.pch";
+				INFOPLIST_FILE = "SCLoggerTests/SCLoggerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A073D53A19BA30F800773C6B /* Build configuration list for PBXProject "SCLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A073D57219BA30F900773C6B /* Debug */,
+				A073D57319BA30F900773C6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A073D57419BA30F900773C6B /* Build configuration list for PBXNativeTarget "SCLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A073D57519BA30F900773C6B /* Debug */,
+				A073D57619BA30F900773C6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A073D57719BA30F900773C6B /* Build configuration list for PBXNativeTarget "SCLoggerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A073D57819BA30F900773C6B /* Debug */,
+				A073D57919BA30F900773C6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A073D53719BA30F800773C6B /* Project object */;
+}

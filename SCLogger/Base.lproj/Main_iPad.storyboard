@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Logger View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SCLoggerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QEL-fb-QSB"/>
+                        <viewControllerLayoutGuide type="bottom" id="AmB-Ds-7l4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=">>> SCLogger &lt;&lt;&lt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLw-hy-X8h">
+                                <rect key="frame" x="20" y="29" width="728" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="28"/>
+                                <color key="textColor" red="1" green="0.62840224860000005" blue="0.072004058750000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="BhB-OQ-Lqo" appends="YES" id="8Px-Gw-jNl"/>
+                                </connections>
+                            </label>
+                            <textView alpha="0.44999998807907104" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nki-eZ-Zxr">
+                                <rect key="frame" x="20" y="85" width="728" height="862"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.19" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="hJa-ed-9QF"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="puW-6l-mYz">
+                                <rect key="frame" x="20" y="962" width="728" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="c6Q-x3-LKu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Generate Logger">
+                                    <color key="titleColor" red="1" green="0.62840224860000005" blue="0.072004058750000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="generateButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1AQ-LP-aR7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14699074070000001" green="0.14699074070000001" blue="0.14699074070000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nki-eZ-Zxr" firstAttribute="top" secondItem="BLw-hy-X8h" secondAttribute="bottom" constant="22" id="2qy-eU-Cet"/>
+                            <constraint firstItem="BLw-hy-X8h" firstAttribute="trailing" secondItem="Nki-eZ-Zxr" secondAttribute="trailing" id="4Z0-R2-PqY"/>
+                            <constraint firstItem="BLw-hy-X8h" firstAttribute="top" secondItem="QEL-fb-QSB" secondAttribute="bottom" constant="9" id="RJc-qj-K0U"/>
+                            <constraint firstAttribute="bottom" secondItem="puW-6l-mYz" secondAttribute="bottom" constant="20" symbolic="YES" id="RZz-Oj-no2"/>
+                            <constraint firstItem="BLw-hy-X8h" firstAttribute="leading" secondItem="Nki-eZ-Zxr" secondAttribute="leading" id="YpB-Hj-Lv1"/>
+                            <constraint firstItem="puW-6l-mYz" firstAttribute="leading" secondItem="Nki-eZ-Zxr" secondAttribute="leading" id="cKd-la-KbS"/>
+                            <constraint firstItem="puW-6l-mYz" firstAttribute="top" secondItem="Nki-eZ-Zxr" secondAttribute="bottom" constant="15" id="lt9-IL-P5f"/>
+                            <constraint firstItem="Nki-eZ-Zxr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="nZV-KL-AIv"/>
+                            <constraint firstItem="puW-6l-mYz" firstAttribute="trailing" secondItem="Nki-eZ-Zxr" secondAttribute="trailing" id="qay-nv-8tI"/>
+                            <constraint firstAttribute="trailing" secondItem="Nki-eZ-Zxr" secondAttribute="trailing" constant="20" id="yY6-Xf-fmH"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="logTextView" destination="Nki-eZ-Zxr" id="Y6L-Bb-o05"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="BhB-OQ-Lqo">
+                    <connections>
+                        <action selector="tapGesture:" destination="BYZ-38-t0r" id="Xkg-g3-V0z"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
