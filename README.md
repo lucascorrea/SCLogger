@@ -15,14 +15,16 @@ Added the import in your project file YourProject-Prefix.pch
 
 or
 
-Using CocoaPods to get start, you can add following line to your Podfile:
+Using [CocoaPods](http://cocoapods.org) to get start, you can add following line to your Podfile:
 
 	pod 'SCLogger'
 
 Example Usage
 =============
 
-To use the component is very easy, if your project has already added the import on PCH, just call the method [SCLogger showDebug]; 
+To use the component is very easy, if your project has already added the import on PCH, just call the method 
+	
+	[SCLogger showDebug]; 
 
 For all **NSLog** used in the project will be recorded in SCLogger also is recorded in a log file. 
 In the debug screen it is possible to send the log via email with the gesture. 
@@ -43,3 +45,6 @@ Permission is hereby-granted, free of charge, to any person Obtaining a copy of 
 The above copyright notice and this permission notice Shall be included in all copies or Substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE Warranties OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE Liable FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, Whether IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, Arising FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR THE OTHER IN Dealings SOFTWARE.
+
+
+[john gruber]:http://daringfireball.net/
