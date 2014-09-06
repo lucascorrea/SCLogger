@@ -13,7 +13,7 @@
 
 @interface SCLogger : UIViewController <UITextViewDelegate, UIScrollViewDelegate, MFMailComposeViewControllerDelegate>
 
-+ (void)showDegub;
++ (void)showDebug;
 + (void)log:(NSString *)format;
 
 void managerLogger(NSString *format, ...);

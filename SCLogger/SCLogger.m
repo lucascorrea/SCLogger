@@ -105,7 +105,7 @@
 #pragma mark -
 #pragma mark - Public methods class
 
-+ (void)showDegub
++ (void)showDebug
 {
     if (self.sharedInstance.view != nil) {
         self.sharedInstance.view.alpha = 0;

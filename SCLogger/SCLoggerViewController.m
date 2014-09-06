@@ -98,7 +98,7 @@
 
 - (IBAction)tapGesture:(id)sender
 {
-    [SCLogger showDegub];
+    [SCLogger showDebug];
 }
 
 
