@@ -3,9 +3,9 @@ SCLogger
 
 SCLogger is a debugging console created by developer for developers, easy integration with your project.
 
-Supported iPhone and iPad
+**Supported iPhone and iPad**
 
-Supported Landscape and Portrait
+**Supported Landscape and Portrait**
 
 
 ![SCLogger Demo](http://www.lucascorrea.com/Git/SCLoggerDemo.gif)
