@@ -7,7 +7,6 @@ SCLogger is a debugging console created by developer for developers, easy integr
 
 **Supported Landscape and Portrait**
 
-
 ![SCLogger Demo](http://www.lucascorrea.com/Git/SCLoggerDemo.gif)
 
 
