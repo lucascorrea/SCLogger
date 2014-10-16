@@ -33,15 +33,15 @@ Added the import in your project file YourProject-Prefix.pch
 Example Usage
 =============
 
-To use the component is very easy, if your project has already added the import on PCH, just call the method 
+To use the component is very easy, if your project has already added the import on PCH, just three-finger long press on debug or call the method 
 	
 	[SCLogger showDebug]; 
 
-For all **NSLog** used in the project will be recorded in SCLogger also is recorded in a log file. 
+For all **NSLog** or **NSLogv** used in the project will be recorded in SCLogger also is recorded in a log file. 
 In the debug screen it is possible to send the log via email with the gesture. 
 
 	tapReconEmail.numberOfTapsRequired = 1; 
-	tapReconEmail.numberOfTouchesRequired = 3;
+	tapReconEmail.numberOfTouchesRequired = 2;
 
 
 License

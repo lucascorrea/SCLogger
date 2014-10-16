@@ -25,6 +25,11 @@
 #pragma mark -
 #pragma mark - Singleton class
 
++ (void)load
+{
+    [SCLogger performSelectorOnMainThread:@selector(sharedInstance) withObject:nil waitUntilDone:NO];
+}
+
 + (SCLogger *)sharedInstance
 {
     static SCLogger *sharedInstance = nil;
@@ -50,6 +55,12 @@
         
         sharedInstance.logFile = [NSFileHandle fileHandleForWritingAtPath:filePath];
         [sharedInstance.logFile seekToEndOfFile];
+
+        #if DEBUG
+        UILongPressGestureRecognizer* longRecon = [[UILongPressGestureRecognizer alloc] initWithTarget:sharedInstance action:@selector(show)];
+        longRecon.numberOfTouchesRequired = 3;
+        [sharedInstance.getWindow addGestureRecognizer:longRecon];
+        #endif
     });
     return sharedInstance;
 }
@@ -91,7 +102,7 @@
     UITapGestureRecognizer* tapReconEmail = [[UITapGestureRecognizer alloc]
                                              initWithTarget:self action:@selector(sendMail)];
     tapReconEmail.numberOfTapsRequired = 1;
-    tapReconEmail.numberOfTouchesRequired = 3;
+    tapReconEmail.numberOfTouchesRequired = 2;
     [self.logText addGestureRecognizer:tapReconEmail];
 }
 
@@ -107,57 +118,44 @@
 
 + (void)showDebug
 {
-    if (self.sharedInstance.view != nil) {
-        self.sharedInstance.view.alpha = 0;
-    }
-    
-    self.sharedInstance.dragging = NO;
-    
-    self.sharedInstance.viewController = [self.sharedInstance visibleViewController];
-    [self.sharedInstance.viewController.view addSubview:self.sharedInstance.view];
-    self.sharedInstance.view.frame = [self.sharedInstance mainScreenBounds];
-    self.sharedInstance.logText.frame = [self.sharedInstance mainScreenBounds];
-    
-    [UIView animateWithDuration:.3 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^(void) {
-        self.sharedInstance.view.alpha = 1;
-        self.sharedInstance.logText.text = self.sharedInstance.messageLog;
-        CGPoint bottomOffset = CGPointMake(0, self.sharedInstance.logText.contentSize.height - self.sharedInstance.logText.bounds.size.height);
-        
-        if (bottomOffset.y > 0) {
-            [self.sharedInstance.logText setContentOffset:bottomOffset animated:YES];
-        }
-    } completion:^(BOOL finished) {}];
+    [self.sharedInstance show];
 }
 
++ (void)closeDebug
+{
+    [self.sharedInstance close];
+}
 
 + (void)log:(NSString *)format
 {
-    NSString *date = [self.sharedInstance.dateFormatter stringFromDate:[NSDate date]];
-    
-    NSString *string = [NSString stringWithFormat:@"%@ - %@\n",date, format];
-    
-    [self.sharedInstance.messageLog appendString:string];
-    
-    CGFloat height, offset;
-    height = self.sharedInstance.logText.contentSize.height - self.sharedInstance.logText.bounds.size.height;
-    offset = self.sharedInstance.logText.contentOffset.y;
-    
-    [self.sharedInstance.logFile writeData:[string dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    if (height == offset) {
-        self.sharedInstance.dragging = NO;
-        self.sharedInstance.logText.layoutManager.allowsNonContiguousLayout = YES;
-    }
-    
-    self.sharedInstance.logText.text = self.sharedInstance.messageLog;
-    
-    if (!self.sharedInstance.isDragging) {
-        CGPoint p = [self.sharedInstance.logText contentOffset];
-        [self.sharedInstance.logText setContentOffset:p animated:NO];
-        [self.sharedInstance.logText scrollRangeToVisible:NSMakeRange([self.sharedInstance.logText.text length], 0)];
-        [self.sharedInstance.logText setScrollEnabled:NO];
-        [self.sharedInstance.logText setScrollEnabled:YES];
-    }
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        NSString *date = [self.sharedInstance.dateFormatter stringFromDate:[NSDate date]];
+        
+        NSString *string = [NSString stringWithFormat:@"%@ - %@\n",date, format];
+        
+        [self.sharedInstance.messageLog appendString:string];
+        
+        CGFloat height, offset;
+        height = self.sharedInstance.logText.contentSize.height - self.sharedInstance.logText.bounds.size.height;
+        offset = self.sharedInstance.logText.contentOffset.y;
+        
+        [self.sharedInstance.logFile writeData:[string dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        if (height == offset) {
+            self.sharedInstance.dragging = NO;
+            self.sharedInstance.logText.layoutManager.allowsNonContiguousLayout = YES;
+        }
+        
+        self.sharedInstance.logText.text = self.sharedInstance.messageLog;
+        
+        if (!self.sharedInstance.isDragging) {
+            CGPoint p = [self.sharedInstance.logText contentOffset];
+            [self.sharedInstance.logText setContentOffset:p animated:NO];
+            [self.sharedInstance.logText scrollRangeToVisible:NSMakeRange([self.sharedInstance.logText.text length], 0)];
+            [self.sharedInstance.logText setScrollEnabled:NO];
+            [self.sharedInstance.logText setScrollEnabled:YES];
+        }
+    }];
 }
 
 
@@ -243,12 +241,40 @@
     }
 }
 
+- (void)show
+{
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        if (self.view != nil) {
+            self.view.alpha = 0;
+        }
+
+        self.dragging = NO;
+
+        self.viewController = [self visibleViewController];
+        [self.viewController.view addSubview:self.view];
+        self.view.frame = [self mainScreenBounds];
+        self.logText.frame = [self mainScreenBounds];
+
+        [UIView animateWithDuration:.3 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^(void) {
+            self.view.alpha = 1;
+            self.logText.text = self.messageLog;
+            CGPoint bottomOffset = CGPointMake(0, self.logText.contentSize.height - self.logText.bounds.size.height);
+
+            if (bottomOffset.y > 0) {
+                [self.logText setContentOffset:bottomOffset animated:YES];
+            }
+        } completion:^(BOOL finished) {}];
+    }];
+}
+
 - (void)close
 {
-    [UIView animateWithDuration:.3 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^(void) {
-        self.view.alpha = 0;
-    } completion:^(BOOL finished) {
-        [self.view removeFromSuperview];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [UIView animateWithDuration:.3 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^(void) {
+            self.view.alpha = 0;
+        } completion:^(BOOL finished) {
+            [self.view removeFromSuperview];
+        }];
     }];
     
 }
@@ -269,7 +295,12 @@ void managerLogger(NSString *format, ...) {
     [SCLogger log:string];
 }
 
+void managerLoggerv(NSString *format, va_list args) {
+    NSString *string = [[NSString alloc] initWithFormat:format arguments:args];
 
+    fprintf(stderr, "%s", [string UTF8String]);
+    [SCLogger log:string];
+}
 
 #pragma mark -
 #pragma mark - UIScrollViewDelegate methods
