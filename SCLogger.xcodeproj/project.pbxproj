@@ -13,11 +13,9 @@
 		A073D54D19BA30F800773C6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A073D54B19BA30F800773C6B /* InfoPlist.strings */; };
 		A073D54F19BA30F800773C6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A073D54E19BA30F800773C6B /* main.m */; };
 		A073D55319BA30F800773C6B /* SCLoggerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A073D55219BA30F800773C6B /* SCLoggerAppDelegate.m */; };
-		A073D55619BA30F800773C6B /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A073D55419BA30F800773C6B /* Main_iPhone.storyboard */; };
-		A073D55919BA30F800773C6B /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A073D55719BA30F800773C6B /* Main_iPad.storyboard */; };
+		A073D55619BA30F800773C6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A073D55419BA30F800773C6B /* Main.storyboard */; };
 		A073D55C19BA30F800773C6B /* SCLoggerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A073D55B19BA30F800773C6B /* SCLoggerViewController.m */; };
 		A073D55E19BA30F800773C6B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A073D55D19BA30F800773C6B /* Images.xcassets */; };
-		A073D56519BA30F900773C6B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A073D56419BA30F900773C6B /* XCTest.framework */; };
 		A073D56619BA30F900773C6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A073D54219BA30F800773C6B /* Foundation.framework */; };
 		A073D56719BA30F900773C6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A073D54619BA30F800773C6B /* UIKit.framework */; };
 		A073D56F19BA30F900773C6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A073D56D19BA30F900773C6B /* InfoPlist.strings */; };
@@ -25,6 +23,7 @@
 		A073D57C19BA31F200773C6B /* SCLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A073D57B19BA31F200773C6B /* SCLogger.m */; };
 		A073D58019BA3F5000773C6B /* LoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = A073D57F19BA3F5000773C6B /* LoremIpsum.m */; };
 		A073D58519BAAB1100773C6B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A073D58419BAAB1100773C6B /* MessageUI.framework */; };
+		A0CE65BB1BF0D9FC00C6A322 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CE65BA1BF0D9FC00C6A322 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,13 +47,11 @@
 		A073D55019BA30F800773C6B /* SCLogger-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCLogger-Prefix.pch"; sourceTree = "<group>"; };
 		A073D55119BA30F800773C6B /* SCLoggerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCLoggerAppDelegate.h; sourceTree = "<group>"; };
 		A073D55219BA30F800773C6B /* SCLoggerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCLoggerAppDelegate.m; sourceTree = "<group>"; };
-		A073D55519BA30F800773C6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		A073D55819BA30F800773C6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		A073D55519BA30F800773C6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A073D55A19BA30F800773C6B /* SCLoggerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCLoggerViewController.h; sourceTree = "<group>"; };
 		A073D55B19BA30F800773C6B /* SCLoggerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCLoggerViewController.m; sourceTree = "<group>"; };
-		A073D55D19BA30F800773C6B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A073D55D19BA30F800773C6B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SCLogger/Images.xcassets; sourceTree = "<group>"; };
 		A073D56319BA30F900773C6B /* SCLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A073D56419BA30F900773C6B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A073D56C19BA30F900773C6B /* SCLoggerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SCLoggerTests-Info.plist"; sourceTree = "<group>"; };
 		A073D56E19BA30F900773C6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A073D57019BA30F900773C6B /* SCLoggerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCLoggerTests.m; sourceTree = "<group>"; };
@@ -63,6 +60,7 @@
 		A073D57E19BA3F5000773C6B /* LoremIpsum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoremIpsum.h; sourceTree = "<group>"; };
 		A073D57F19BA3F5000773C6B /* LoremIpsum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoremIpsum.m; sourceTree = "<group>"; };
 		A073D58419BAAB1100773C6B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A0CE65BA1BF0D9FC00C6A322 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +79,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A073D56519BA30F900773C6B /* XCTest.framework in Frameworks */,
 				A073D56719BA30F900773C6B /* UIKit.framework in Frameworks */,
 				A073D56619BA30F900773C6B /* Foundation.framework in Frameworks */,
 			);
@@ -93,6 +90,9 @@
 		A073D53619BA30F800773C6B = {
 			isa = PBXGroup;
 			children = (
+				A0CE65BA1BF0D9FC00C6A322 /* Launch Screen.storyboard */,
+				A073D55419BA30F800773C6B /* Main.storyboard */,
+				A073D55D19BA30F800773C6B /* Images.xcassets */,
 				A073D54819BA30F800773C6B /* SCLogger */,
 				A073D56A19BA30F900773C6B /* SCLoggerTests */,
 				A073D54119BA30F800773C6B /* Frameworks */,
@@ -116,7 +116,6 @@
 				A073D54219BA30F800773C6B /* Foundation.framework */,
 				A073D54419BA30F800773C6B /* CoreGraphics.framework */,
 				A073D54619BA30F800773C6B /* UIKit.framework */,
-				A073D56419BA30F900773C6B /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -128,11 +127,8 @@
 				A073D58119BA3F5700773C6B /* LoremIpsum */,
 				A073D55119BA30F800773C6B /* SCLoggerAppDelegate.h */,
 				A073D55219BA30F800773C6B /* SCLoggerAppDelegate.m */,
-				A073D55419BA30F800773C6B /* Main_iPhone.storyboard */,
-				A073D55719BA30F800773C6B /* Main_iPad.storyboard */,
 				A073D55A19BA30F800773C6B /* SCLoggerViewController.h */,
 				A073D55B19BA30F800773C6B /* SCLoggerViewController.m */,
-				A073D55D19BA30F800773C6B /* Images.xcassets */,
 				A073D54919BA30F800773C6B /* Supporting Files */,
 			);
 			path = SCLogger;
@@ -262,9 +258,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A073D55919BA30F800773C6B /* Main_iPad.storyboard in Resources */,
 				A073D55E19BA30F800773C6B /* Images.xcassets in Resources */,
-				A073D55619BA30F800773C6B /* Main_iPhone.storyboard in Resources */,
+				A073D55619BA30F800773C6B /* Main.storyboard in Resources */,
+				A0CE65BB1BF0D9FC00C6A322 /* Launch Screen.storyboard in Resources */,
 				A073D54D19BA30F800773C6B /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,20 +315,13 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		A073D55419BA30F800773C6B /* Main_iPhone.storyboard */ = {
+		A073D55419BA30F800773C6B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A073D55519BA30F800773C6B /* Base */,
 			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		A073D55719BA30F800773C6B /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A073D55819BA30F800773C6B /* Base */,
-			);
-			name = Main_iPad.storyboard;
+			name = Main.storyboard;
+			path = SCLogger;
 			sourceTree = "<group>";
 		};
 		A073D56D19BA30F900773C6B /* InfoPlist.strings */ = {

@@ -96,11 +96,6 @@
     }
 }
 
-- (IBAction)tapGesture:(id)sender
-{
-    [SCLogger showDebug];
-}
-
 
 
 #pragma mark -

@@ -14,6 +14,7 @@
 @property (strong, nonatomic) UITextView *logText;
 @property (strong, nonatomic) NSFileHandle *logFile;
 @property (assign, getter = isDragging) BOOL dragging;
+@property (assign, getter = isShow) BOOL show;
 @property (strong, nonatomic) NSString *filename;
 @property (strong, nonatomic) UIViewController *viewController;
 
@@ -37,7 +38,8 @@
     dispatch_once(&pred, ^{             // This code is called at most once per app
         sharedInstance = [[SCLogger alloc] init];
         sharedInstance.messageLog = [[NSMutableString alloc] init];
-        [sharedInstance.messageLog appendString:@"\nSCLogger start\n\n"];
+    
+        [sharedInstance.messageLog appendString:@"\nSCLogger start\n\nDouble tap to close.\nTouch with two fingers to send log to email.\n\n"];
         
         NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -55,12 +57,13 @@
         
         sharedInstance.logFile = [NSFileHandle fileHandleForWritingAtPath:filePath];
         [sharedInstance.logFile seekToEndOfFile];
-
-        #if DEBUG
+        
+#if DEBUG
         UILongPressGestureRecognizer* longRecon = [[UILongPressGestureRecognizer alloc] initWithTarget:sharedInstance action:@selector(show)];
         longRecon.numberOfTouchesRequired = 3;
         [sharedInstance.getWindow addGestureRecognizer:longRecon];
-        #endif
+#endif
+        
     });
     return sharedInstance;
 }
@@ -80,15 +83,10 @@
     
     self.logText = [[UITextView alloc] initWithFrame:[self mainScreenBounds]];
     self.logText.editable = NO;
+    self.logText.selectable = NO;
     self.logText.textColor = [UIColor whiteColor];
     self.logText.delegate = self;
-    
-    self.logText.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin |
-    UIViewAutoresizingFlexibleWidth |
-    UIViewAutoresizingFlexibleRightMargin |
-    UIViewAutoresizingFlexibleTopMargin |
-    UIViewAutoresizingFlexibleHeight |
-    UIViewAutoresizingFlexibleBottomMargin;
+
     
     self.logText.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.logText];
@@ -166,9 +164,9 @@
 - (CGRect)mainScreenBounds
 {
     CGRect bounds = [[UIScreen mainScreen] bounds]; // portrait bounds
-    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
-        bounds.size = CGSizeMake(bounds.size.height, bounds.size.width);
-    }
+//    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+//        bounds.size = CGSizeMake(bounds.size.height, bounds.size.width);
+//    }
     return bounds;
 }
 
@@ -243,23 +241,28 @@
 
 - (void)show
 {
+    if (self.isShow)
+        return;
+    
+    self.show = YES;
+    
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         if (self.view != nil) {
             self.view.alpha = 0;
         }
-
+        
         self.dragging = NO;
-
+        
         self.viewController = [self visibleViewController];
         [self.viewController.view addSubview:self.view];
         self.view.frame = [self mainScreenBounds];
         self.logText.frame = [self mainScreenBounds];
-
+        
         [UIView animateWithDuration:.3 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^(void) {
             self.view.alpha = 1;
             self.logText.text = self.messageLog;
             CGPoint bottomOffset = CGPointMake(0, self.logText.contentSize.height - self.logText.bounds.size.height);
-
+            
             if (bottomOffset.y > 0) {
                 [self.logText setContentOffset:bottomOffset animated:YES];
             }
@@ -269,6 +272,8 @@
 
 - (void)close
 {
+    self.show = NO;
+    
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         [UIView animateWithDuration:.3 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^(void) {
             self.view.alpha = 0;
@@ -297,7 +302,7 @@ void managerLogger(NSString *format, ...) {
 
 void managerLoggerv(NSString *format, va_list args) {
     NSString *string = [[NSString alloc] initWithFormat:format arguments:args];
-
+    
     fprintf(stderr, "%s", [string UTF8String]);
     [SCLogger log:string];
 }
