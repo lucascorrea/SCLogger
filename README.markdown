@@ -17,13 +17,13 @@ Just drag the two classes into your project. Also you need to import MessageUI f
 
 Added the import in your project file YourProject-Prefix.pch
 
-  #import "SCLogger.h"
+    #import "SCLogger.h"
 
 **or**
 
 Using [CocoaPods](http://cocoapods.org) to get start, you can add following line to your Podfile:
 
-  pod 'SCLogger'
+    pod 'SCLogger'
 
 Add in what settings you want the log is active in your Podfile.
 For example Debug or Release.
@@ -41,7 +41,7 @@ For example Debug or Release.
 
 Added the import in your project file YourProject-Prefix.pch
 
-  #import <SCLogger/SCLogger.h>
+    #import <SCLogger/SCLogger.h>
 
 If **Xcode 6 or higher** is required to create a PCH file, add the path of the PCH in the bundle settings and allow `Precompile Prefix Header = YES`
 
@@ -61,8 +61,8 @@ To use the component is very easy, if your project has already added the import 
 For all **NSLog** or **NSLogv** used in the project will be recorded in SCLogger also is recorded in a log file.
 In the debug screen it is possible to send the log via email with the gesture.
 
-  tapReconEmail.numberOfTapsRequired = 1;
-  tapReconEmail.numberOfTouchesRequired = 2;
+    tapReconEmail.numberOfTapsRequired = 1;
+    tapReconEmail.numberOfTouchesRequired = 2;
 
 
 License
