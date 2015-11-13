@@ -60,7 +60,7 @@
         
 #if SCLOGGER_DEBUG
         UILongPressGestureRecognizer* longRecon = [[UILongPressGestureRecognizer alloc] initWithTarget:sharedInstance action:@selector(show)];
-        longRecon.numberOfTouchesRequired = 1;
+        longRecon.numberOfTouchesRequired = 3;
         [sharedInstance.getWindow addGestureRecognizer:longRecon];
 #endif
         
