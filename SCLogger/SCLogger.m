@@ -38,13 +38,13 @@
     dispatch_once(&pred, ^{             // This code is called at most once per app
         sharedInstance = [[SCLogger alloc] init];
         sharedInstance.messageLog = [[NSMutableString alloc] init];
-    
+        
         [sharedInstance.messageLog appendString:@"\nSCLogger start\n\nDouble tap to close.\nTouch with two fingers to send log to email.\n\n"];
         
         NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
         
-        NSString *name = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+        NSString *name = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
         
         sharedInstance.filename = [NSString stringWithFormat:@"%@.log", name];
         NSString *filePath = [documentsDirectory stringByAppendingFormat:@"/%@", sharedInstance.filename];
@@ -58,9 +58,9 @@
         sharedInstance.logFile = [NSFileHandle fileHandleForWritingAtPath:filePath];
         [sharedInstance.logFile seekToEndOfFile];
         
-#if DEBUG
+#if SCLOGGER_DEBUG
         UILongPressGestureRecognizer* longRecon = [[UILongPressGestureRecognizer alloc] initWithTarget:sharedInstance action:@selector(show)];
-        longRecon.numberOfTouchesRequired = 3;
+        longRecon.numberOfTouchesRequired = 1;
         [sharedInstance.getWindow addGestureRecognizer:longRecon];
 #endif
         
@@ -86,7 +86,7 @@
     self.logText.selectable = NO;
     self.logText.textColor = [UIColor whiteColor];
     self.logText.delegate = self;
-
+    
     
     self.logText.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.logText];
@@ -164,9 +164,9 @@
 - (CGRect)mainScreenBounds
 {
     CGRect bounds = [[UIScreen mainScreen] bounds]; // portrait bounds
-//    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
-//        bounds.size = CGSizeMake(bounds.size.height, bounds.size.width);
-//    }
+    //    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+    //        bounds.size = CGSizeMake(bounds.size.height, bounds.size.width);
+    //    }
     return bounds;
 }
 
@@ -220,7 +220,7 @@
         MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
         picker.mailComposeDelegate = self;
         
-        NSString *nameApp = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+        NSString *nameApp = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
         
         [picker setSubject:nameApp];
         
@@ -235,7 +235,14 @@
         
         [self.viewController presentViewController:picker animated:YES completion:nil];
     }else{
-        [[[UIAlertView alloc] initWithTitle:@"Cannot send email" message:@"Please ensure that you have logged into your mail account" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil] show];
+        
+        UIAlertController *alertController = [[UIAlertController alloc] init];
+        alertController.title = @"Cannot send email";
+        alertController.message = @"Please ensure that you have logged into your mail account";
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}]];
+        
+        [self.viewController presentViewController:alertController animated:YES completion:nil];
     }
 }
 
@@ -290,21 +297,25 @@
 #pragma mark - Function
 
 void managerLogger(NSString *format, ...) {
+#if SCLOGGER_DEBUG
     va_list argumentList;
     va_start(argumentList, format);
     
     NSString *string = [[NSString alloc] initWithFormat:format arguments:argumentList];
     va_end(argumentList);
     
-    fprintf(stderr, "%s", [string UTF8String]);
+    fprintf(stderr, "%s\n", [string UTF8String]);
     [SCLogger log:string];
+#endif
 }
 
 void managerLoggerv(NSString *format, va_list args) {
+#if SCLOGGER_DEBUG
     NSString *string = [[NSString alloc] initWithFormat:format arguments:args];
     
-    fprintf(stderr, "%s", [string UTF8String]);
+    fprintf(stderr, "%s\n", [string UTF8String]);
     [SCLogger log:string];
+#endif
 }
 
 #pragma mark -

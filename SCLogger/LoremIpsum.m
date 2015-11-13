@@ -109,7 +109,7 @@
 
 - (NSString*) randomWord
 {
-    int randomIndex = random() % [_words count];
+    long randomIndex = random() % [_words count];
     return [_words objectAtIndex:randomIndex];
 }
 

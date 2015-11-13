@@ -12,8 +12,9 @@
 #define NSLog(...) managerLogger(__VA_ARGS__)
 #define NSLogv(...) managerLoggerv(__VA_ARGS__)
 
-@interface SCLogger : UIViewController <UITextViewDelegate, UIScrollViewDelegate, MFMailComposeViewControllerDelegate>
 
+@interface SCLogger : UIViewController <UITextViewDelegate, UIScrollViewDelegate, MFMailComposeViewControllerDelegate>
+//+ (void)sharedInstance;
 + (void)showDebug;
 + (void)closeDebug;
 + (void)log:(NSString *)format;
