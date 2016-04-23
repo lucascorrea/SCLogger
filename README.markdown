@@ -7,8 +7,8 @@ SCLogger is a debugging console created by developer for developers, easy integr
 
 **Supported Landscape and Portrait**
 
-![SCLogger](http://www.lucascorrea.com/Git/SCLoggerDemo1.gif)
-![SCLogger2](http://www.lucascorrea.com/Git/SCLoggerDemo2.gif)
+![SCLogger](http://www.lucascorrea.com/images/SCLoggerDemo1.gif)
+![SCLogger2](http://www.lucascorrea.com/images/SCLoggerDemo2.gif)
 
 
 Getting Started
@@ -46,10 +46,10 @@ Added the import in your project file YourProject-Prefix.pch
 If **Xcode 6 or higher** is required to create a PCH file, add the path of the PCH in the bundle settings and allow `Precompile Prefix Header = YES`
 
 Create File PCH
-![SCLogger](http://www.lucascorrea.com/Git/sclogger_create_pch.png)
+![SCLogger](http://www.lucascorrea.com/images/sclogger_create_pch.png)
 
 Build Settings Prefix Header
-![SCLogger](http://www.lucascorrea.com/Git/sclogger_prefix_header_config.png)
+![SCLogger](http://www.lucascorrea.com/images/sclogger_prefix_header_config.png)
 
 Example Usage
 =============
@@ -70,7 +70,7 @@ License
 
 SCLogger is licensed under the MIT License:
 
-Copyright (c) 2015 Lucas Correa (http://www.lucascorrea.com/)
+Copyright (c) 2011-2016 Lucas Correa (http://www.lucascorrea.com/)
 
 Permission is hereby-granted, free of charge, to any person Obtaining a copy of this software and Associated documentation files (the "Software"), to deal in the Software without restriction, including without Limitation the rights to use, copy, modify, merge , publish, distribute, sublicense, and / or sell copies of the Software, and to permit persons to Whom the Software is furnished to the so, subject to the Following conditions:
 
