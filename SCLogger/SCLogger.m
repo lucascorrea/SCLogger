@@ -38,7 +38,7 @@
         sharedInstance = [[SCLogger alloc] init];
         sharedInstance.messageLog = [[NSMutableString alloc] init];
         
-        [sharedInstance.messageLog appendString:@"\nSCLogger start\n\nDouble tap to close.\nTouch with two fingers to send log to email.\n\n"];
+        [sharedInstance.messageLog appendString:@"\n\nSCLogger start\n\nDouble tap to close.\nTouch with two fingers to send log to email.\n\n"];
         
         NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -60,7 +60,6 @@
     });
     return sharedInstance;
 }
-
 
 
 #pragma mark -
@@ -101,11 +100,10 @@
 }
 
 
-
 #pragma mark -
 #pragma mark - Public methods class
 
-+ (void)enabledLogger {
++ (void)enabledGesture {
 #if SCLOGGER_DEBUG
     UILongPressGestureRecognizer* longRecon = [[UILongPressGestureRecognizer alloc] initWithTarget:self.sharedInstance action:@selector(show)];
     longRecon.numberOfTouchesRequired = 3;
@@ -153,15 +151,11 @@
 }
 
 
-
 #pragma mark -
 #pragma mark - Private methods
 
 - (CGRect)mainScreenBounds {
-    CGRect bounds = [[UIScreen mainScreen] bounds]; // portrait bounds
-    //    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
-    //        bounds.size = CGSizeMake(bounds.size.height, bounds.size.width);
-    //    }
+    CGRect bounds = [[UIScreen mainScreen] bounds];
     return bounds;
 }
 
@@ -205,14 +199,13 @@
 }
 
 - (void)sendMail {
-    if( [MFMailComposeViewController canSendMail])
-    {
-        MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
-        picker.mailComposeDelegate = self;
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *compose = [[MFMailComposeViewController alloc] init];
+        compose.mailComposeDelegate = self;
         
         NSString *nameApp = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
         
-        [picker setSubject:nameApp];
+        [compose setSubject:nameApp];
         
         UIDevice *myDevice = [UIDevice currentDevice];
         NSUUID *uuid = [NSUUID UUID];
@@ -225,14 +218,16 @@
         
         NSString *emailBody = device;
         
-        NSString *arquivo = [NSString stringWithFormat:@"/Documents/%@", self.filename];
-        NSString *caminho = [NSHomeDirectory() stringByAppendingPathComponent:arquivo];
+        NSString *file = [NSString stringWithFormat:@"/Documents/%@", self.filename];
+        NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:file];
         
-        NSData *myData = [NSData dataWithContentsOfFile:caminho];
-        [picker addAttachmentData:myData mimeType:@"text/plain" fileName:self.filename];
-        [picker setMessageBody:emailBody isHTML:NO];
+        NSData *myData = [NSData dataWithContentsOfFile:path];
+        [compose addAttachmentData:myData mimeType:@"text/plain" fileName:self.filename];
+        [compose setMessageBody:emailBody isHTML:NO];
         
-        [self.viewController presentViewController:picker animated:YES completion:nil];
+        [self close];
+        
+        [self.viewController presentViewController:compose animated:YES completion:nil];
     } else {
         
         UIAlertController *alertController = [[UIAlertController alloc] init];
@@ -259,7 +254,7 @@
         self.dragging = NO;
         
         self.viewController = [self visibleViewController];
-        [self.viewController.view addSubview:self.view];
+        [[UIApplication sharedApplication].keyWindow addSubview:self.view];
         self.view.frame = [self mainScreenBounds];
         self.logText.frame = [self mainScreenBounds];
         
@@ -413,6 +408,7 @@ void managerLoggerv(NSString *format, va_list args) {
 #endif
 }
 
+
 #pragma mark -
 #pragma mark - UIScrollViewDelegate methods
 
@@ -425,7 +421,6 @@ void managerLoggerv(NSString *format, va_list args) {
 }
 
 
-
 #pragma mark -
 #pragma mark - MFMailComposeViewControllerDelegate methods
 
@@ -434,3 +429,4 @@ void managerLoggerv(NSString *format, va_list args) {
 }
 
 @end
+

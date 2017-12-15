@@ -14,7 +14,7 @@
 
 @interface SCLogger : UIViewController <UITextViewDelegate, UIScrollViewDelegate, MFMailComposeViewControllerDelegate>
 
-+ (void)enabledLogger;
++ (void)enabledGesture;
 + (void)showDebug;
 + (void)closeDebug;
 + (void)log:(NSString *)format;
