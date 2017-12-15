@@ -229,6 +229,9 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Siriuscode Solutions";
 				TargetAttributes = {
+					A073D53E19BA30F800773C6B = {
+						DevelopmentTeam = 6CG326ELR9;
+					};
 					A073D56219BA30F900773C6B = {
 						TestTargetID = A073D53E19BA30F800773C6B;
 					};
@@ -413,6 +416,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 6CG326ELR9;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCLogger/SCLogger-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -433,6 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 6CG326ELR9;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCLogger/SCLogger-Prefix.pch";
 				INFOPLIST_FILE = "SCLogger/SCLogger-Info.plist";
