@@ -17,31 +17,31 @@ Just drag the two classes into your project. Also you need to import MessageUI f
 
 Added the import in your project file YourProject-Prefix.pch
 
-#import "SCLogger.h"
+    #import "SCLogger.h"
 
 **or**
 
 Using [CocoaPods](http://cocoapods.org) to get start, you can add following line to your Podfile:
 
-pod 'SCLogger'
+    pod 'SCLogger'
 
 Add in what settings you want the log is active in your Podfile.
 For example Debug or Release.
 
-post_install do |installer|
-installer.pods_project.targets.each do |target|
-target.build_configurations.each do |config|
-if config.name == 'Debug'
-config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)', 'DEBUG=1', 'SCLOGGER_DEBUG=1']
-end
-end
-end
-end
+    post_install do |installer|
+          installer.pods_project.targets.each do |target|
+              target.build_configurations.each do |config|
+                  if config.name == 'Debug'
+                      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)', 'DEBUG=1', 'SCLOGGER_DEBUG=1']
+                  end
+              end
+          end
+      end
 
 
 Added the import in your project file YourProject-Prefix.pch
 
-#import <SCLogger/SCLogger.h>
+    #import <SCLogger/SCLogger.h>
 
 If **Xcode 6 or higher** is required to create a PCH file, add the path of the PCH in the bundle settings and allow `Precompile Prefix Header = YES`
 
@@ -56,17 +56,17 @@ Example Usage
 
 To use the component is very easy, if your project has already added the import on PCH, just **three-finger long press** on debug or call the method
 
-[SCLogger showDebug];
+    [SCLogger showDebug];
 
 To add gesture you need to call the method after `[window makeKeyAndVisible]` or end of method `- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`
 
-[SCLogger enabledGesture];
-
+    [SCLogger enabledGesture];
+    
 For all **NSLog** or **NSLogv** used in the project will be recorded in SCLogger also is recorded in a log file.
 In the debug screen it is possible to send the log via email with the gesture.
 
-tapReconEmail.numberOfTapsRequired = 1;
-tapReconEmail.numberOfTouchesRequired = 2;
+    tapReconEmail.numberOfTapsRequired = 1;
+    tapReconEmail.numberOfTouchesRequired = 2;
 
 
 License
