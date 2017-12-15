@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A02F33931FE457A9000B0B96 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = A02F33921FE457A8000B0B96 /* README.markdown */; };
 		A073D54319BA30F800773C6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A073D54219BA30F800773C6B /* Foundation.framework */; };
 		A073D54519BA30F800773C6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A073D54419BA30F800773C6B /* CoreGraphics.framework */; };
 		A073D54719BA30F800773C6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A073D54619BA30F800773C6B /* UIKit.framework */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A02F33921FE457A8000B0B96 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
 		A073D53F19BA30F800773C6B /* SCLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A073D54219BA30F800773C6B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A073D54419BA30F800773C6B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -90,6 +92,7 @@
 		A073D53619BA30F800773C6B = {
 			isa = PBXGroup;
 			children = (
+				A02F33921FE457A8000B0B96 /* README.markdown */,
 				A0CE65BA1BF0D9FC00C6A322 /* Launch Screen.storyboard */,
 				A073D55419BA30F800773C6B /* Main.storyboard */,
 				A073D55D19BA30F800773C6B /* Images.xcassets */,
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A073D55E19BA30F800773C6B /* Images.xcassets in Resources */,
+				A02F33931FE457A9000B0B96 /* README.markdown in Resources */,
 				A073D55619BA30F800773C6B /* Main.storyboard in Resources */,
 				A0CE65BB1BF0D9FC00C6A322 /* Launch Screen.storyboard in Resources */,
 				A073D54D19BA30F800773C6B /* InfoPlist.strings in Resources */,

@@ -14,7 +14,7 @@
 {
     // Override point for customization after application launch.
     
-    [SCLogger enabledLogger];
+    [SCLogger enabledGesture];
     return YES;
 }
 							
